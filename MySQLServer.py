@@ -18,8 +18,8 @@ def my_connection():
         cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
         if connect.is_connected():
             print("Database connected")
-    except:
-        print("Could not connect to database")
+    except mysql.connector.Error as e:
+        print("Database connection failed", e)
 
     else:
         print("Database 'alx_book_store' created successfully!")
