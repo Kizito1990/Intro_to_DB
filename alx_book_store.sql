@@ -4,11 +4,17 @@ import mysql.connector
 connection = mysql.connector.connect(
     host = "localhost",
     user = "root",
-    password = "Azegba1234567890@",
-    database = "alx_book_store"
+    password = "Azegba1234567890@"
+    
 )
 
 cursor = connection.cursor()
+
+cursor.execute("
+CREATE DATABASE IF NOT EXISTS alx_book_store
+")
+
+USE alx_book_store;
 
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS Books (
