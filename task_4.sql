@@ -14,7 +14,8 @@ def print_books_table_description(db_name):
 
         # Query to get the description of the books table
         sql = """
-        SELECT * FROM books
+        SELECT COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, IS_NULLABLE, COLUMN_KEY, COLUMN_DEFAULT
+        FROM "INFORMATION_SCHEMA.COLUMNS", "COLUMN_NAME", "COLUMN_TYPE", "TABLE_SCHEMA = 'alx_book_store'", "TABLE_NAME = 'Books'"
         """
 
         # Execute the query
