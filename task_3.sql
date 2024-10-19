@@ -8,6 +8,8 @@ connection = mysql.connector.connect(
     database = "alx_book_store"
 )
 
+USE alx_book_store;
+
 cursor = connection.cursor()
 
 cursor.execute("SHOW TABLES")
